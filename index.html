@@ -24,7 +24,7 @@
         <div class="carousel-left">
           <div class="big-pictures">
             <div v-for="(pic, i) in pictures">
-              <div v-if="i === currentIndex">
+              <div v-if="isActive(i)">
                 <img :src="pic.image" :alt="pic.title" />
                 <div class="pic-description">
                   <h2>{{ pic.title }}</h2>
@@ -34,11 +34,17 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-right">
-        <i class="fa-solid fa-chevron-up" id="prev"></i>
-        <i class="fa-solid fa-chevron-down" id="next"></i>
-        <div class="thumbnails"></div>
+        <div class="carousel-right">
+          <i class="fa-solid fa-chevron-up" id="prev"></i>
+          <i class="fa-solid fa-chevron-down" id="next"></i>
+          <div class="thumbnails">
+            <figure
+              v-for="(pic, i) in pictures"
+              :class="{'active' : isActive(i)}">
+              <img :src="pic.image" :alt="pic.title" />
+            </figure>
+          </div>
+        </div>
       </div>
     </div>
   </body>

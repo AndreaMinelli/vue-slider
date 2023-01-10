@@ -50,6 +50,11 @@ const app = Vue.createApp({
       ],
     };
   },
+  methods: {
+    isActive(i) {
+      return i === this.currentIndex;
+    },
+  },
 });
 
 app.mount("#root");
