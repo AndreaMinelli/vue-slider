@@ -21,7 +21,10 @@
   <body>
     <div class="container" id="root">
       <div id="carousel">
-        <div class="carousel-left">
+        <div
+          class="carousel-left"
+          @mouseover="isHover = true"
+          @mouseleave="isHover = false">
           <div class="big-pictures">
             <div v-for="(pic, i) in pictures">
               <div v-if="isActive(i)">

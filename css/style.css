@@ -42,6 +42,7 @@ img {
   align-items: center;
   color: white;
   position: relative;
+  cursor: pointer;
 }
 
 .carousel-left .pic-description {
