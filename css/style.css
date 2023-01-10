@@ -46,6 +46,7 @@ img {
 
 .carousel-left .pic-description {
   text-align: end;
+  text-shadow: 1px 1px black;
   position: absolute;
   bottom: 20px;
   right: 20px;

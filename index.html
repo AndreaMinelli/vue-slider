@@ -46,7 +46,8 @@
           <div class="thumbnails">
             <figure
               v-for="(pic, i) in pictures"
-              :class="{'active' : isActive(i)}">
+              :class="{'active' : isActive(i)}"
+              @click="setPic(i)">
               <img :src="pic.image" :alt="pic.title" />
             </figure>
           </div>

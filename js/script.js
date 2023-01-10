@@ -69,6 +69,9 @@ const app = Vue.createApp({
         }
       }
     },
+    setPic(i) {
+      this.currentIndex = i;
+    },
   },
 });
 
