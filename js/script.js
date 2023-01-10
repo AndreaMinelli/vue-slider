@@ -54,6 +54,21 @@ const app = Vue.createApp({
     isActive(i) {
       return i === this.currentIndex;
     },
+    changePic(target) {
+      if (target === "prev") {
+        if (!this.currentIndex) {
+          this.currentIndex = this.pictures.length - 1;
+        } else {
+          this.currentIndex--;
+        }
+      } else {
+        if (this.currentIndex < this.pictures.length - 1) {
+          this.currentIndex++;
+        } else {
+          this.currentIndex = 0;
+        }
+      }
+    },
   },
 });
 

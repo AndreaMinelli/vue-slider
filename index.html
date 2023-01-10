@@ -35,8 +35,14 @@
           </div>
         </div>
         <div class="carousel-right">
-          <i class="fa-solid fa-chevron-up" id="prev"></i>
-          <i class="fa-solid fa-chevron-down" id="next"></i>
+          <i
+            class="fa-solid fa-chevron-up"
+            id="prev"
+            @click="changePic('prev')"></i>
+          <i
+            class="fa-solid fa-chevron-down"
+            id="next"
+            @click="changePic('next')"></i>
           <div class="thumbnails">
             <figure
               v-for="(pic, i) in pictures"
