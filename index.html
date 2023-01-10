@@ -10,8 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Vue script -->
@@ -20,16 +19,27 @@
     <script defer src="js/script.js"></script>
   </head>
   <body>
-    <div class="container">
-        <div id="carousel">
-            <div class="carousel-left">
-                <div class="big-pictures"></div>
+    <div class="container" id="root">
+      <div id="carousel">
+        <div class="carousel-left">
+          <div class="big-pictures">
+            <div v-for="(pic, i) in pictures">
+              <div v-if="i === currentIndex">
+                <img :src="pic.image" :alt="pic.title" />
+                <div class="pic-description">
+                  <h2>{{ pic.title }}</h2>
+                  <p>{{ pic.text }}</p>
+                </div>
+              </div>
             </div>
-        <div class="carousel-right">
-            <i class="fa-solid fa-chevron-up" id="prev"></i>
-            <i class="fa-solid fa-chevron-down" id="next"></i>
-            <div class="thumbnails"></div>
+          </div>
         </div>
+      </div>
+      <div class="carousel-right">
+        <i class="fa-solid fa-chevron-up" id="prev"></i>
+        <i class="fa-solid fa-chevron-down" id="next"></i>
+        <div class="thumbnails"></div>
+      </div>
     </div>
   </body>
 </html>
